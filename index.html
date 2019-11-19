@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="icon" href="https://res.cloudinary.com/ethelbert007/image/upload/v1511873622/logo_geyrq5.jpg">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+        integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script src="/js/index.js"></script>
+    <script src="/js/projectName.js"></script>
+    <script src="/js/platformSelection.js"></script>
+    <script src="/js/hardwareConfiguration.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-5 col-sm-4 col-md-4 col-lg-4 row">
+                <div class="row col-xs-5 col-sm-5 col-md-5 col-lg-5 side-menu-btn" style="padding: 0px!important;">
+                    <div class="list-group point">
+                        <a href="#" class="list-group-item" id="project">
+                            工程配置类
+                        </a>
+                        <a href="#" class="list-group-item" id="chip">
+                            芯片配置类
+                        </a>
+                        <a href=" #" class="list-group-item" id="hardware">
+                            硬件配置类
+                        </a>
+                        <a href="#" class="list-group-item" id="kernel">
+                            内核配置类
+                        </a>
+                        <a href="#" class="list-group-item" id="userlib">
+                            用户态库配置类
+                        </a>
+                        <a href="#" class="list-group-item" id="process">
+                            原生进程类
+                        </a>
+                        <a href="#" class="list-group-item" id="virtualContainer">
+                            虚拟机配置类
+                        </a>
+                    </div>
+                    <!--
+                    <div class="list-group point1">
+                        <a href="#" class="list-group-item" id="process">
+                            原生进程类
+                        </a>
+                        <a href="#" class="list-group-item" id="virtualContainer">
+                            虚拟机配置类
+                        </a>
+                    </div>-->
+                    <div class="list-group">
+                        <a href="#" class="list-group-item" id="generate">
+                            工程生成
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-7 col-sm-7 col-md-7 col-col-lg-7 processAndContainerDisplay">
+                    <div class="displayBox">
+                        <div class="dis0 displayPanel con5 content">
+                            display1
+                        </div>
+                        <div class="dis1 displayPanel con6 content">
+                            display2
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-7 col-sm-8 col-md-8 col-lg-8">
+
+                <div class="configurationSelect">
+                    <div class="box">
+                        <div class="con0 content" id="projectNameContent">
+
+                        </div>
+                        <div class="con1 content">
+
+                        </div>
+                        <div class="con2 content">
+                            <div class="btn-group btn-group-lg configuration_select_header_button">
+                                <!--
+                                <button type="button" class="btn btn-default configBTN" data-toggle="modal" data-target="">初始化配置组</button>
+                                <button type="button" class="btn btn-default configBTN" data-toggle="modal" data-target="">额外内存组</button>
+                                <button type="button" class="btn btn-default configBTN" data-toggle="modal" data-target="">共享内存组</button>-->
+                                <button type="button" class="btn btn-default configBTN" id="configBTN1">初始化配置组</button>
+                                <button type="button" class="btn btn-default configBTN" id="configBTN2">额外内存组</button>
+                                <button type="button" class="btn btn-default configBTN" id="configBTN3">共享内存组</button>
+                            </div>
+                        </div>
+                        <div class="con3 content">
+
+                        </div>
+                        <div class="con4 content">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="con0 content">
+                        <div class="PorjectInformation">
+                            <h1>工程信息</h1>
+                            <button type="button" class="btn btn-default addProjectName" data-toggle="modal"
+                                data-target="#projectInformationModal">
+                                工程名称
+                            </button>
+                            <div class="mx-auto">
+                                <div class="card border-primary" id="projectDashboard">
+                                    <h2>工程信息列表</h2>
+                                </div>
+                                <!--<h4 class="card-title"> Current Products</h4>-->
+                                <ul class="list-group" id="projectDisplay">
+                                    <!-- codes  here supplied via JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con1 content" id="platformSelect">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 platformSelect">
+                                <h2>选择架构</h2>
+                                <select class="selectpicker" id="platform">
+                                    <option value="ARMv7-M">ARMv7-M</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 platformSelect">
+                                <h2>选择芯片厂商</h2>
+                                <select class="selectpicker" id="vendor">
+                                    <option value="STMicroelectronics">STMicroelectronics</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 platformSelect">
+                                <h2>选择芯片系列</h2>
+                                <select class="selectpicker" id="chipSerious">
+                                    <option value="STMicroelectronics">STMicroelectronics</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 platformSelect">
+                                <h2>选择芯片型</h2>
+                                <select class="selectpicker" id="chipFull">
+                                    <option value="STM32F767IGT6">STM32F767IGT6</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 platformSelect">
+                                <h2>选择芯片型</h2>
+                                <select class="selectpicker" id="chipClass">
+                                    <option value="STM32F767IG">STM32F767IG</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;"
+                                id="modalFooter">
+                                <button type="button" id="platformSubmit" class="btn btn-save addPlatformSelection">
+                                    <span class="fa fa-save" aria-hidden="true"></span>新建</button>
+                                <h3>芯片配置信息</h3>
+
+                                <ul class="list-group" id="chipConfigurationDisplay">
+                                    <!-- codes  here supplied via JS-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con2 content">
+                        <div class="hardwareConfigurationDisplay row" id="RME">
+                            <div class="left">
+                                <h2>架构配置</h2>
+                                <br>
+                                <br>
+                                <h3>NVIC Grouping</h3>
+                                <input type="text" name="NVIC_Grouping" class="txt_departmentname" id="NVIC_Grouping">
+                                <br>
+                                <h3>Systick Value</h3>
+                                <input type="text" name="Systick_Value" class="txt_departmentname" id="Systick_Value">
+                            </div>
+                            <div class="right">
+                                <h2>芯片配置</h2>
+                                <br>
+                                <br>
+                                <h3>PLLM</h3>
+                                <input type="text" name="PLLM" class="txt_departmentname" id="PLLM">
+                                <h3>PLLN</h3>
+                                <input type="text" name="PLLN" class="txt_departmentname" id="PLLN">
+                                <h3>PLLP</h3>
+                                <input type="text" name="PLLP" class="txt_departmentname" id="PLLP">
+                                <h3>PLLQ</h3>
+                                <input type="text" name="PLLQ" class="txt_departmentname" id="PLLQ">
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <button type="button" id="platformSubmit" class="btn btn-save addPlatformSelection">
+                                    <span class="fa fa-save" aria-hidden="true"></span>新建</button>
+                            </div>
+
+                        </div>
+                        <div class="hardwareConfigurationDisplay" id="Extmem">
+                            <div class="card border-primary">
+                                <div class="card-header" id="usernameSpan">
+                                    <h3 id="h3header">点击 + 添加内存项</h3>
+                                </div>
+                                <div class="card-body text-primary">
+                                    <h4 class="card-title">额外内存项属性</h4>
+                                    <ul class="list-group" id="extmemDisplay">
+                                        <!-- codes  here supplied via JS-->
+                                    </ul>
+                                </div>
+                                <button class="btn btn-outline-success btn-sm m-3 addNewExtmem" id="addNewExtmem"
+                                    data-toggle="modal" data-target="#addExtmemModal"
+                                    style="width: 30px; height:30px;">+</button>
+                            </div>
+                        </div>
+                        <div class="hardwareConfigurationDisplay" id="Shmem">
+                            <div class="card border-primary">
+                                <div class="card-header" id="usernameSpan">
+                                    <h3 id="h3header">点击 + 添加内存项</h3>
+                                </div>
+                                <div class="card-body text-primary">
+                                    <h4 class="card-title">共享内存项属性</h4>
+                                    <ul class="list-group" id="extmemDisplay">
+                                        <!-- codes  here supplied via JS-->
+                                    </ul>
+                                </div>
+                                <button class="btn btn-outline-success btn-sm m-3 addNewExtmem" id="addNewShmem"
+                                    data-toggle="modal" data-target="#addshmemModal"
+                                    style="width: 30px; height:30px;">+</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="con3 content">
+                        <div class="row">
+                            <div class="left">
+                                <p>内核代码内存基址项</p>
+                                <input type="text" class="txt_departmentname" name="RME_code_base" id="RME_code_base">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的代码段的基址</p>-->
+                                <br>
+                                <p>内核代码内存长度项</p>
+                                <input type="text" class="txt_departmentname" name="RME_code_size" id="RME_code_size">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的代码段的长度</p>-->
+                                <br>
+                                <p>内核数据内存基址项</p>
+                                <input type="text" class="txt_departmentname" name="RME_data_base" id="RME_data_base">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的数据段的基址</p>-->
+                                <br>
+                                <p>内核数据内存长度项</p>
+                                <input type="text" class="txt_departmentname" name="RME_data_size" id="RME_data_size">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的数据段的长度</p>-->
+                                <br>
+                                <p>内核栈长度项</p>
+                                <input type="text" class="txt_departmentname" name="RME_stack_size" id="RME_stack_size">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的内核栈段的长度</p>-->
+                                <br>
+                            </div>
+                            <div class="right">
+                                <p>额外内核对象用内存长度项</p>
+                                <input type="text" class="txt_departmentname" name="RME_Extra_Kmem" id="RME_Extra_Kmem">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 该配置项是一个必填的十六进制值。用户应该填入在系统创建完所有与生成器生成的代码相关的的
+                                    内核对象后，还额外需要保留给用户用来创建内核对象的额外内核内存长度</p>-->
+                                <br>
+                                <p>内核内存分配粒度项</p>
+                                <select id="RME_Kmem_Order">
+                                    <option value="8-bytes">8-bytes</option>
+                                    <option value="16-bytes">16-bytes</option>
+                                    <option value="32-bytes">32-bytes</option>
+                                </select>
+                                <br>
+                                <p>内核优先级数量项</p>
+                                <input type="text" class="txt_departmentname" name="RME_Kern_Prios" id="RME_Kern_Prios">
+                                <!--<p style="color: red">* 该配置项是一个必填的整数值，决定了系统中内核态优先级的数量。用户应该填入一个是处理器字
+                                        长的整数倍的十进制数值</p>-->
+                                <br>
+                                <p>内核编译器优化等级项</p>
+                                <select id="RME_Compiler_Optimization">
+                                    <option value="O0">不优化</option>
+                                    <option value="O1">基本优化</option>
+                                    <option value="O2">全面优化</option>
+                                    <option value="O3">极限优化</option>
+                                </select>
+                                <br>
+                                <p>内核编译器优化等级项</p>
+                                <select id="RME_Compiler_Prioritization">
+                                    <option value="Size">大小优化</option>
+                                    <option value="Time">时间优化</option>
+                                </select>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="con4 content">
+                        <div class="row">
+                            <div class="left">
+                                <p>用户态库代码内存长度项</p>
+                                <input type="text" class="txt_departmentname" name="RVM_code_base" id="RVM_code_base">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的代码段的基址</p>-->
+                                <br>
+                                <p>用户态库数据内存长度项</p>
+                                <input type="text" class="txt_departmentname" name="RVM_data_size" id="RVM_data_size">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的代码段的长度</p>-->
+                                <br>
+                                <p>额外权能表槽位数项</p>
+                                <input type="text" class="txt_departmentname" name="RVM_Extra_Captbl"
+                                    id="RVM_Extra_Captbl">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的数据段的基址</p>-->
+                                <br>
+                                <p>守护进程栈长度项</p>
+                                <input type="text" class="txt_departmentname" name="RVM_Stack_Size" id="RME_Stack_Size">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的数据段的长度</p>-->
+                                <br>
+                                <p>虚拟化优先级数</p>
+                                <input type="text" class="txt_departmentname" name="RME_Virt_Prios" id="RME_Virt_Prios">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 用户应该填入内核所使用的内核栈段的长度</p>-->
+                                <br>
+                            </div>
+                            <div class="right">
+                                <p>虚拟机事件源数</p>
+                                <input type="text" class="txt_departmentname" name="RME_Virt_Evts" id="RME_Virt_Evts">
+                                <!--<p style="color: red">* 该配置项是一个必填的十六进制值, 该配置项是一个必填的十六进制值。用户应该填入在系统创建完所有与生成器生成的代码相关的的
+                                            内核对象后，还额外需要保留给用户用来创建内核对象的额外内核内存长度</p>-->
+                                <br>
+                                <p>虚拟机向量映射数</p>
+                                <input type="text" class="txt_departmentname" name="RVM_Virt_Maps" id="RVM_Virt_Maps">
+                                <!--<p style="color: red">* 该配置项是一个必填的整数值，决定了系统中内核态优先级的数量。用户应该填入一个是处理器字
+                                                长的整数倍的十进制数值</p>-->
+                                <br>
+                                <p>用户态库编译器优化等级项</p>
+                                <select id="RVM_Compiler_Optimization">
+                                    <option value="O0">不优化</option>
+                                    <option value="O1">基本优化</option>
+                                    <option value="O2">全面优化</option>
+                                    <option value="O3">极限优化</option>
+                                </select>
+                                <br>
+                                <p>虚拟机向量映射数</p>
+                                <select id="RVM_Compiler_Prioritization">
+                                    <option value="Size">大小优化</option>
+                                    <option value="Time">时间优化</option>
+                                </select>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!------------------------   工程信息组 -------------------->
+        <div class="modal fade" id="projectInformationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 id="addNewProjectModalLabel">填写工程名称</h1>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="project_information" class="form-control" placeholder="工程名称项"
+                                id="projectName">
+                        </div>
+                    </div>
+                    <div class="modal-footer" id="projectModalFooter">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="fa fa-close"
+                                aria-hidden="true"></span>关闭</button>
+                        <button type="button" id="projectSubmit" class="btn btn-success addNewProject"
+                            data-dismiss="modal"><span class="fa fa-save" aria-hidden="true"></span>添加</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!------------         初始化配置组       ------------->
+        <!------------         额外内存组         ------------->
+        <div class="modal fade" id="addExtmemModal" tabindex="-1" role="dialog" aria-labelledby="addExtmemModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- header for the modal -->
+                    <div class="modal-header">
+                        <h4 class="modal-title left" id="addNewExtMemModalLabel">增加额外内存项</h4>
+                    </div>
+                    <!-- body of the modal -->
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form" id="modalForm">
+                            <div class="form-group">
+                                <label for="extmem_base" class="inputLabel">额外内存段基址项</label>
+                                <input id="extmem_base" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="extmem_size" class="inputLabel">额外内存段长度项</label>
+                                <input id="extmem_size" type="text" />
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="extmem_type" class="inputLabel">额外内存段类别项</label>
+                                <select id="extmem_type" class="custom-select">
+                                    <option value="Code">代码</option>
+                                    <option value="Data">数据</option>
+                                    <option value="Device">设备</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="extmem_attribute" class="inputLabel">额外内存段属性项</label>
+                                <form>
+                                    <div class="form-check extmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Readable">可读
+                                        </label>
+                                    </div>
+                                    <div class="form-check extmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Writable">可写
+                                        </label>
+                                    </div>
+                                    <div class="form-check extmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="eXecutable">可执行
+                                        </label>
+                                    </div>
+                                    <div class="form-check extmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Bufferable">可缓冲
+                                        </label>
+                                    </div>
+                                    <div class="form-check extmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Cacheable">可缓存
+                                        </label>
+                                    </div>
+                                    <div class="form-check extmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Static">静态映射
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                        <div class="modal-footer align-content-center" id="modalFooter">
+                            <button type="button" class="btn btn-outline-danger btn-sm m-2" data-dismiss="modal"
+                                id="modalClose"><i class="fa fa-close"></i> 关闭
+                            </button>
+                            <button type="button" class="btn btn-outline-success btn-sm m-2" id="modalSubmit"><i
+                                    class="fa fa-save"></i> 增加额外内存项 </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!------------         共享内存组         ------------->
+        <div class="modal fade" id="addshmemModal" tabindex="-1" role="dialog" aria-labelledby="addshmemModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- header for the modal -->
+                    <div class="modal-header">
+                        <h4 class="modal-title left" id="addNewshMemModalLabel">增加共享内存项</h4>
+                    </div>
+                    <!-- body of the modal -->
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form" id="modalForm">
+                            <div class="form-group">
+                                <label for="shmem_name" class="inputLabel">共享内存段名称项</label>
+                                <input id="shmem_name" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="shmem_base" class="inputLabel">共享内存段基址项</label>
+                                <input id="shmem_base" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="shmem_size" class="inputLabel">共享内存段长度项</label>
+                                <input id="shmem_size" type="text" />
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="shmem_type" class="inputLabel">共享内存段类别项</label>
+                                <select id="shmem_type" class="custom-select">
+                                    <option value="Code">代码</option>
+                                    <option value="Data">数据</option>
+                                    <option value="Device">设备</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="shmem_attribute" class="inputLabel">额外内存段属性项</label>
+                                <form>
+                                    <div class="form-check shmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Readable">可读
+                                        </label>
+                                    </div>
+                                    <div class="form-check shmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Writable">可写
+                                        </label>
+                                    </div>
+                                    <div class="form-check shmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="eXecutable">可执行
+                                        </label>
+                                    </div>
+                                    <div class="form-check shmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Bufferable">可缓冲
+                                        </label>
+                                    </div>
+                                    <div class="form-check shmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Cacheable">可缓存
+                                        </label>
+                                    </div>
+                                    <div class="form-check shmem-checkbox">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" value="Static">静态映射
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                        <div class="modal-footer align-content-center" id="modalFooter">
+                            <button type="button" class="btn btn-outline-danger btn-sm m-2" data-dismiss="modal"
+                                id="modalClose"><i class="fa fa-close"></i> 关闭
+                            </button>
+                            <button type="button" class="btn btn-outline-success btn-sm m-2" id="modalSubmit"><i
+                                    class="fa fa-save"></i> 增加额外内存项 </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

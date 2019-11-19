@@ -1,0 +1,168 @@
+body {
+  text-align: center;
+}
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.list-group {
+  width: 100%;
+}
+
+.box .content,
+.displayBox .displayPanel {
+  display: none;
+}
+
+.box .con0 {
+  display: block;
+}
+
+.configurationSelect {
+  min-height: 50px;
+  background-color: yellowgreen;
+}
+
+button.btn.btn-default.configBTN {
+  border-radius: 0px;
+  min-height: 50px;
+}
+
+.btn-group.btn-group-lg.configuration_select_header_button {
+  min-height: 50px;
+}
+
+button#projectSubmit {
+  margin-left: 10px;
+}
+
+.platformSelect {
+  margin-top: 30px;
+}
+
+.platformSelect select {
+  display: block;
+}
+
+#platformSelect {
+  text-align: center;
+}
+
+a#project, a#userlib {
+  background-color: #90c418;
+}
+
+a#chip, a#generate {
+  background-color: #59adff
+}
+
+a#hardware, #process {
+  background-color: #f8c822; 
+}
+
+a#virtualContainer {
+  background-color: #fae800;
+}
+
+a#kernel {
+  background-color: #e88bff;
+}
+
+.list-group-item {
+  border-radius: 0px;
+  border: 0
+} 
+
+.list-group-item:first-child {
+  border-radius: 0px;
+}
+
+.list-group-item:last-child {
+  border-radius: 0px;
+}
+
+a.list-group-item {
+  color:black;
+}
+
+#Extmem, #Shmem {
+  display: none;
+}
+
+div#RME h3 {
+  float: left;
+}
+
+input[type=text]:not(.browser-default) {
+  /* float: left; */
+  width: 95%;
+}
+
+[type="checkbox"]:not(:checked), 
+[type="checkbox"]:checked {
+  opacity: 10;
+}
+
+label.inputLabel, 
+label.form-check-label, 
+h4#addNewshMemModalLabel  {
+  float: left;
+  font-size: 14px;
+  color: rgb(33,37,41);
+}
+
+h4#addNewExtMemModalLabel {
+  font-weight: bold;
+}
+
+.left h2, .right h2 {
+  margin-top: 20px;
+}
+
+select {
+  border: 2px #17a2b8 solid;
+  display: block;
+}
+
+@media(max-width: 767px) {
+  .right, .left {
+      width: 85%;
+      display: block;
+  }
+}
+
+@media(min-width: 768px) {
+  a.list-group-item {
+      height:80px;
+      padding-top:20px;
+  }
+  .right, .left {
+      width: 45%;
+      display: table-cell;
+      float: none !important;
+      margin-left: 20px;
+      margin-top: 10px;
+  }
+}
+
+@media(min-width: 992px) {
+  #platformSelect .row {
+      margin: auto;
+      width: 85%;
+  }
+  a.list-group-item {
+      height:128px;
+      padding-top: 50px;
+  }
+}
+
+@media(min-width: 1200px) {
+  a.list-group-item {
+      height:150px;
+      padding-top: 60px;
+  }
+}
